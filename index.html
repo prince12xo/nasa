@@ -1,1 +1,78 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrepOS - Astronaut Cadet & STEM Prep Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+        <!-- Header & Exam Countdown Timer -->
+        <header>
+            <span class="badge">NASA Cadet & STEM Flight-Prep</span>
+            <h1>PrepOS Command Engine</h1>
+            <p>Mission-Critical Study Tracking & Error Diagnostics</p>
+            
+            <div class="countdown-card">
+                <h3>Target Exam Countdown</h3>
+                <div id="countdown-timer">
+                    <span id="days">00</span>d : 
+                    <span id="hours">00</span>h : 
+                    <span id="minutes">00</span>m : 
+                    <span id="seconds">00</span>s
+                </div>
+            </div>
+        </header>
+        <!-- Focus Stopwatch Session -->
+        <section class="card timer-card">
+            <h2>Focus Session Stopwatch</h2>
+            <div class="stopwatch-display" id="stopwatch">00:00:00</div>
+            <div class="timer-controls">
+                <button id="start-btn" onclick="startTimer()">Start Session</button>
+                <button id="pause-btn" onclick="pauseTimer()">Pause</button>
+                <button id="reset-btn" onclick="resetTimer()">Reset</button>
+            </div>
+        </section>
+        <!-- Syllabus Checklist & High Weightage Filter -->
+        <section class="card syllabus-card">
+            <div class="section-header">
+                <h2>Flight Curriculum Checklist</h2>
+                <button id="filter-high-yield" onclick="toggleHighYield()">Toggle High-Yield Only</button>
+            </div>
+            <div class="overall-progress">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <span id="progress-text">0% Completed</span>
+            </div>
+
+            <div id="syllabus-container">
+                <!-- Chapters with Theory, Practice, and PYQs will load here -->
+            </div>
+        </section>
+  <!-- AI Dynamic Schedule Generator -->
+        <section class="card ai-card">
+            <h2>AI Schedule Generator</h2>
+            <p>Generate a customized study schedule based on your pending chapters and exam deadline.</p>
+            <button class="ai-btn" onclick="generateAISchedule()">Generate Flight Plan</button>
+            <div id="schedule-output" class="ai-output">
+                <em>Your generated schedule will appear here...</em>
+            </div>
+        </section>
+
+        <!-- Error & Mistake Log -->
+        <section class="card error-card">
+            <h2>Flight Error Log & AI Diagnostic</h2>
+            <p>Log practice test mistakes to receive AI-driven corrective feedback.</p>
+            <textarea id="error-input" placeholder="e.g., Made a sign error in Integration by Parts on Physics mock test #2..."></textarea>
+            <button class="ai-btn" onclick="analyzeError()">Analyze & Correct Error</button>
+            <div id="error-analysis-output" class="ai-output">
+                <em>Diagnostic analysis will appear here...</em>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
