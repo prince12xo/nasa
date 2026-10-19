@@ -185,8 +185,7 @@ textarea::placeholder {
     color: #64748b;
 }
 
-
-/* High-Contrast Italian Italic Style for AI Output Boxes */
+/* AI Output Box Style */
 .ai-output {
     background: #030712;
     border-left: 3px solid var(--accent-purple);
@@ -194,15 +193,10 @@ textarea::placeholder {
     border-radius: 0 8px 8px 0;
     margin-top: 12px;
     font-size: 0.95rem;
-    
-    /* Crisp bright text color for maximum readability */
     color: #ffffff;
     text-shadow: 0 0 8px rgba(192, 132, 252, 0.3);
-    
-    /* Italian Serif Italic Styling */
     font-family: "Georgia", "Garamond", "Times New Roman", serif;
     font-style: italic;
     line-height: 1.6;
     letter-spacing: 0.3px;
 }
-    
