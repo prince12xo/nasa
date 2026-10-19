@@ -1,4 +1,4 @@
-// --- 1. EXAM COUNTDOWN TIMER ---
+ // --- 1. EXAM COUNTDOWN TIMER ---
 // Set target exam date (e.g., May 1, 2027)
 const examDate = new Date("May 1, 2027 09:00:00").getTime();
 
@@ -7,7 +7,7 @@ function updateCountdown() {
     const distance = examDate - now;
 
     if (distance < 0) {
-        document.getElementById("countdown-timer").innerText = "MISSION TIME ARRIVED";
+        document.getElementById("countdown-timer").innerText = "EXAM DAY REACHED";
         return;
     }
 
@@ -77,7 +77,7 @@ function renderSyllabus() {
     filtered.forEach(item => {
         const div = document.createElement("div");
         div.style.cssText = "background: rgba(30, 41, 59, 0.6); border: 1px solid #334155; padding: 10px; border-radius: 8px; margin-top: 10px;";
-        
+
         div.innerHTML = `
             <div style="font-weight: 600; font-size: 0.9rem; color: #38bdf8; display: flex; justify-content: space-between;">
                 <span>${item.name}</span>
@@ -131,15 +131,15 @@ function updateProgress() {
 renderSyllabus();
 
 
-// --- 4. DYNAMIC AI SCHEDULE GENERATOR ---
+// --- 4. DYNAMIC SCHEDULE GENERATOR ---
 function generateAISchedule() {
     const output = document.getElementById("schedule-output");
-    
+
     // Filter out chapters that still have pending tasks
     const pendingChapters = syllabusData.filter(ch => !ch.theory || !ch.practice || !ch.pyq);
-    
+
     if (pendingChapters.length === 0) {
-        output.innerHTML = `<em>All flight curriculum modules completed! Proceed to final mission simulations.</em>`;
+        output.innerHTML = `<em>All syllabus chapters completed! Proceed to full mock test revisions.</em>`;
         return;
     }
 
@@ -147,41 +147,41 @@ function generateAISchedule() {
     const ch1 = pendingChapters[0] ? pendingChapters[0].name : "Advanced Core Review";
     const ch2 = pendingChapters[1] ? pendingChapters[1].name : "Formula & PYQ Drills";
 
-    output.innerHTML = `<em><strong>Dynamic Flight Plan Computed:</strong><br>
-    • Focus Module Alpha: <strong>${ch1}</strong> (Target: Complete Theory & Practice blocks)<br>
-    • Focus Module Beta: <strong>${ch2}</strong> (Target: Solve previous years' question set)<br>
-    • Status: ${pendingChapters.length} mission modules remaining in active queue.</em>`;
+    output.innerHTML = `<em><strong>Generated Daily Study Plan:</strong><br>
+    • Priority Focus 1: <strong>${ch1}</strong> (Target: Complete Theory & Practice blocks)<br>
+    • Priority Focus 2: <strong>${ch2}</strong> (Target: Solve previous years' questions)<br>
+    • Status: ${pendingChapters.length} topics remaining in active queue.</em>`;
 }
 
-// --- 5. DYNAMIC ERROR DIAGNOSTIC ENGINE ---
+// --- 5. ERROR LOG & ANALYSIS ENGINE ---
 function analyzeError() {
     const input = document.getElementById("error-input").value.trim();
     const output = document.getElementById("error-analysis-output");
-    
+
     if (!input) {
-        output.innerHTML = `<em>Please input a specific error or mistake description for telemetry analysis.</em>`;
+        output.innerHTML = `<em>Please describe a specific mistake or concept gap for analysis.</em>`;
         return;
     }
 
-    // Dynamic keyword analysis based on what the user typed
     let diagnosticTip = "Review fundamental definition principles and re-verify calculation steps.";
     let actionItem = "Solve 3 similar numerical problems immediately.";
 
     const lowerInput = input.toLowerCase();
     if (lowerInput.includes("sign") || lowerInput.includes("plus") || lowerInput.includes("minus")) {
-        diagnosticTip = "Arithmetic sign inversion detected under operational pressure.";
-        actionItem = "Write out intermediate step brackets explicitly to eliminate sign drift.";
+        diagnosticTip = "Arithmetic sign inversion detected during execution.";
+        actionItem = "Write out intermediate step brackets explicitly to eliminate sign errors.";
     } else if (lowerInput.includes("formula") || lowerInput.includes("remember") || lowerInput.includes("forgot")) {
-        diagnosticTip = "Formula retrieval latency identified in long-term memory buffer.";
+        diagnosticTip = "Formula recall delay identified.";
         actionItem = "Derive the core formula from first principles twice before attempting the next set.";
     } else if (lowerInput.includes("integration") || lowerInput.includes("calculus") || lowerInput.includes("diff")) {
         diagnosticTip = "Calculus operator boundary condition or substitution oversight.";
-        actionItem = "Perform a quick dimensional and limit check on your final expression.";
+        actionItem = "Perform a quick limits check on your final expression.";
     }
 
-    output.innerHTML = `<em><strong>Telemetry Diagnostic Report:</strong><br>
-    • Input Log: "${input}"<br>
-    • Root Cause: ${diagnosticTip}<br>
-    • Corrective Protocol: ${actionItem}</em>`;
+    output.innerHTML = `<em><strong>Error Analysis Report:</strong><br>
+    • Logged Input: "${input}"<br>
+    • Identified Issue: ${diagnosticTip}<br>
+    • Corrective Action: ${actionItem}</em>`;
 }
+
 
