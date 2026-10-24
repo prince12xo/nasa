@@ -183,6 +183,3 @@ function analyzeError() {
     • Identified Issue: ${diagnosticTip}<br>
     • Corrective Action: ${actionItem}</em>`;
 }
-
-
-fnrnficwk
