@@ -9,4 +9,5 @@
 [• I have not connected the Ai API's for security purposes but we can connect it and it will run perfectly] 
 
 A countdown for students till exam 
-And stopwatch to measure there study hours 
+And stopwatch to measure there study hours
+fjciek6ntff
